@@ -8,18 +8,23 @@
 
 	<div>
 		<form th:action="@{/persistMessage}" method="post">
-		<textarea name="msg" rows="2" cols="40"></textarea>
+			<textarea name="msg" rows="2" cols="40"></textarea>
 			<input type="submit" value="Save Message">
 		</form>
 	</div>
-	
+
 	<div>
 		<h2>Mensajes</h2>
-		
+
 		<ul th:each="session1 : ${sessionMessages}">
 			<li th:text="${session1}"></li>
 		</ul>
 	</div>
 
+	<div>
+		<form th:action="@{/destroy}" method="post">
+			<input type="submit" value="Destroy Session" />
+		</form>
+	</div>
 </body>
 </html>
